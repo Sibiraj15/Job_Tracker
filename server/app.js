@@ -63,7 +63,7 @@ const app = express();
 // ✅ Allowed Origins
 const allowedOrigins = [
   "http://localhost:5173",
-  process.env.CLIENT_URL,
+  "https://job-tracker-nu-rouge.vercel.app",
 ].filter(Boolean);
 
 // ✅ CORS
