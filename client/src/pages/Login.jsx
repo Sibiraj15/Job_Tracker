@@ -27,9 +27,6 @@ const Login = () => {
 
     try {
       const res = await apiClient.post("/auth/login", formData);
-
-      console.log("LOGIN RESPONSE:", res.data);
-
       // ⚠️ adjust field names if needed based on your backend response
       const token = res.data.accessToken;
 
