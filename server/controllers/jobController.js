@@ -1,39 +1,7 @@
 import Job from "../models/Job.js";
 import { cloudinary } from "../config/cloudinary.js"; // ✅ named import
 
-
-// export const createJob = async (req, res) => {
-//   try {
-//     let resumeUrl = "";
-
-//     if (req.file) {
-//       const result = await new Promise((resolve, reject) => {
-//         const stream = cloudinary.uploader.upload_stream(
-//           { folder: "job-tracker-resumes", resource_type: "auto" },
-//           (error, result) => {
-//             if (error) reject(error);
-//             else resolve(result);
-//           }
-//         );
-//         stream.end(req.file.buffer);
-//       });
-
-//       resumeUrl = result.secure_url;
-//     }
-
-//     const job = await Job.create({
-//       ...req.body,
-//       resume_url: resumeUrl,
-//       user_id: req.user.id
-//     });
-
-//     res.status(201).json(job);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ message: error.message });
-//   }
-// };
-
+// CREATE JOB
 
 
 export const createJob = async (req, res) => {
@@ -101,45 +69,7 @@ export const getJobs = async (req, res) => {
   }
 };
 
-// UPDATE
-// export const updateJob = async (req, res) => {
-//   try {
-//     const job = await Job.findOneAndUpdate(
-//       { _id: req.params.id, user_id: req.user.id },
-//       req.body,
-//       { new: true }
-//     );
-
-//     res.json(job);
-//   } catch (error) {
-//     res.status(500).json({ message: error.message });
-//   }
-// };
-
-// export const updateJob = async (req, res) => {
-//   try {
-//     let updateData = { ...req.body };
-
-//     if (req.body.notes) {
-//       updateData.notes = JSON.parse(req.body.notes);
-//     }
-
-//     if (req.body.tags) {
-//       updateData.tags = JSON.parse(req.body.tags);
-//     }
-
-//     const job = await Job.findOneAndUpdate(
-//       { _id: req.params.id, user_id: req.user.id },
-//       updateData,
-//       { new: true }
-//     );
-
-//     res.json(job);
-//   } catch (error) {
-//     res.status(500).json({ message: error.message });
-//   }
-// };
-
+// UPDATE JOB
 export const updateJob = async (req, res) => {
   try {
     let updateData = { ...req.body };
